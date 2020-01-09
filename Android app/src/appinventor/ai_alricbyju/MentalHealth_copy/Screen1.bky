@@ -1,0 +1,143 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="yR0D-1DLw]rSBAf9cT5S" x="129" y="180">
+    <mutation component_type="Button" instance_name="Sign_up" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Sign_up</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="gEYZ(YyQJKLdUj7Vv?5{">
+        <value name="SCREEN">
+          <block type="text" id="RQlqSyA%b3},8.e7EPpQ">
+            <field name="TEXT">Screen4</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="global_declaration" id="76Nmcq%-Igr=D;e$i/+9" x="119" y="254">
+    <field name="NAME">password</field>
+    <value name="VALUE">
+      <block type="text" id="ylhj3S%q`MOxI86K{x%5">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="B@:jP~+ZLpRduB@LO^95" x="99" y="292">
+    <mutation component_type="FirebaseDB" instance_name="FirebaseDB1" event_name="GotValue"></mutation>
+    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="=/7L:~a;!Dw3d.5IEkMk">
+        <field name="VAR">global password</field>
+        <value name="VALUE">
+          <block type="lists_select_item" id="z:XBk!;A^efbcnx{u7)A">
+            <value name="LIST">
+              <block type="lexical_variable_get" id="lq;F|)nU}/@oT9[8~Ula">
+                <mutation>
+                  <eventparam name="value"></eventparam>
+                </mutation>
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <value name="NUM">
+              <block type="math_number" id="u++bhgrAfwXJ`fD47zo=">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="Ur-pIVPT4L8iH*LSF%je" x="87" y="414">
+    <mutation component_type="Button" instance_name="submit" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">submit</field>
+    <statement name="DO">
+      <block type="component_method" id="U*%NvUzpS(,WC:9C*h`H">
+        <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+        <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+        <value name="ARG0">
+          <block type="component_set_get" id="oy:q9Sm+?HwjQm;7K4F$">
+            <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+            <field name="COMPONENT_SELECTOR">TextBox1</field>
+            <field name="PROP">Text</field>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="text" id="A(}j8mre=wvmGT/S![)~">
+            <field name="TEXT">username not found</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="7Wu1vYJ{l+!=EIXMvAfw">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="Z$CwSmK.Al)2H$:+L#a4">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="l7l^jsNY|.hCCC!M(]AB">
+                    <field name="VAR">global password</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_join" id="z{,zscMoe|(n6J,4YosR">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="8M{qxNpYG}*5#wl!-Gpv">
+                        <field name="TEXT">password </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="component_set_get" id="XW;65i#WW7x5RAS}mu6/">
+                        <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                        <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                        <field name="PROP">Text</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="component_set_get" id="YXJlSP,uRq4lpY~}X:e.">
+                <mutation component_type="Label" set_or_get="set" property_name="Visible" is_generic="false" instance_name="Label3"></mutation>
+                <field name="COMPONENT_SELECTOR">Label3</field>
+                <field name="PROP">Visible</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="U^1reNfBny/QU_Pjc.L=">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="component_method" id="yFC}b)@d=$(b9g7nBdEk">
+                <mutation component_type="TinyDB" method_name="StoreValue" is_generic="false" instance_name="TinyDB1"></mutation>
+                <field name="COMPONENT_SELECTOR">TinyDB1</field>
+                <value name="ARG0">
+                  <block type="text" id="F9~20jMrO${Dm[M-6%7a">
+                    <field name="TEXT">username</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="component_set_get" id="z|vkV}cR}][{oBNER=[J">
+                    <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">TextBox1</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_openAnotherScreen" id="r0*a91f9|J@^O*[fT@P(">
+                    <value name="SCREEN">
+                      <block type="text" id="ZMN#/3?zjfJJ8S%a(;W7">
+                        <field name="TEXT">Screen2</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="175" language-version="23"></yacodeblocks>
+</xml>

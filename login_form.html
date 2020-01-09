@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Mind Memo | Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="login_style.css" />
+</head>
+<body id="LoginForm">
+  <img src="Mind Memo logo.png" alt="Mind Memo logo" class="logo">
+  <div id="login_div" class="main-div">
+    <h3>Mind Memo Doctor Log-in</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome to Mind Memo.</h3>
+    <p id="user_para">Welcome to Mind Memo. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+    <button onclick="location.href='dashboard.html'" type="button" class="record_button"> Patient Records</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyApL2nMoiTQQ-gvkdYxZc65s81nudF3S_w",
+      authDomain: "mind-memo.firebaseapp.com",
+      databaseURL: "https://mind-memo.firebaseio.com",
+      projectId: "mind-memo",
+      storageBucket: "mind-memo.appspot.com",
+      messagingSenderId: "177637158714"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>

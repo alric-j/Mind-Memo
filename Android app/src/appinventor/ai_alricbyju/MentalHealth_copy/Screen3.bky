@@ -1,0 +1,193 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="rLt`.nJ4w?ZU[jNRvF-c" x="23" y="-33">
+    <mutation component_type="Slider" instance_name="Slider1" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">Slider1</field>
+    <statement name="DO">
+      <block type="controls_if" id=".FS4na;Jp]qX?-E(,e+8">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="math_compare" id="[JC)1+gT,%tPWKexS{%/">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="component_set_get" id="@EUbP/6te`RPbs3$ZC)I">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="Slider1"></mutation>
+                <field name="COMPONENT_SELECTOR">Slider1</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="component_set_get" id="GLb~%]8YCu4qE0aedxkT">
+                <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+                <field name="COMPONENT_SELECTOR">Label3</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="--[rZa+}5`v[J$Qw^B%u">
+            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+            <field name="COMPONENT_SELECTOR">Label3</field>
+            <field name="PROP">Text</field>
+            <value name="VALUE">
+              <block type="math_add" id="DNY4;HZZ/]@%Tp~sk3tm">
+                <mutation items="2"></mutation>
+                <value name="NUM0">
+                  <block type="component_set_get" id="^`)VgbVG*9_-_+[T3Cx,">
+                    <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+                    <field name="COMPONENT_SELECTOR">Label3</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <value name="NUM1">
+                  <block type="math_number" id="cm(7e_uW2Y1(yi4mugW|">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="JsTwpz9PBjq.V*}p/#%E">
+            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+            <field name="COMPONENT_SELECTOR">Label3</field>
+            <field name="PROP">Text</field>
+            <value name="VALUE">
+              <block type="math_subtract" id="-6,~aOlb{t;ur6ihH-Wv">
+                <value name="A">
+                  <block type="component_set_get" id="9H%sq-,`c3zpr@p4Msn4">
+                    <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+                    <field name="COMPONENT_SELECTOR">Label3</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="6Hq0_2.U6N[mR=T?$GxH">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id=",F4~@gi)h@tE9uQl;9#/" x="630" y="-37">
+    <mutation component_type="Form" instance_name="Screen3" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen3</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id=";A*?Dt$bOF`~rU#iLgo}">
+        <field name="VAR">global name</field>
+        <value name="VALUE">
+          <block type="component_method" id="m,=O?cpg|x;1F!,V)plm">
+            <mutation component_type="TinyDB" method_name="GetValue" is_generic="false" instance_name="TinyDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">TinyDB1</field>
+            <value name="ARG0">
+              <block type="text" id="8[_670|71Z@D8$48{]g,">
+                <field name="TEXT">username</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="text" id="Sr(E/o4FbYCW3FW/ky-/">
+                <field name="TEXT">error</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="global_declaration" id="Ho2;}rTzN~.D1p=1P+$E" x="25" y="217">
+    <field name="NAME">journal_entry</field>
+    <value name="VALUE">
+      <block type="text" id="wcR8`Q..0.##zvqAC,rG">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="g~BqsBhDxCSRJwxotlV0" x="33" y="254">
+    <field name="NAME">night_rating</field>
+    <value name="VALUE">
+      <block type="text" id="uDU(XeP:80MN=t+q8#Y3">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="k2xbd:jjiAx/7Gdjt!)3" x="69" y="348">
+    <field name="NAME">name</field>
+    <value name="VALUE">
+      <block type="text" id="~2pm$oC12C(id~U=c3RV">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="gHZZZ+dk]bsN9rc$6^m*" x="61" y="386">
+    <mutation component_type="Button" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="J6a+P!?YhQy$xb6=GdXl">
+        <field name="VAR">global journal_entry</field>
+        <value name="VALUE">
+          <block type="component_set_get" id="M#ENq;9)bG/)}sCw4@I7">
+            <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+            <field name="COMPONENT_SELECTOR">TextBox1</field>
+            <field name="PROP">Text</field>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="[|K=1KnxRxJC4C.Gee(]">
+            <mutation component_type="FirebaseDB" method_name="Unauthenticate" is_generic="false" instance_name="FirebaseDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+            <next>
+              <block type="lexical_variable_set" id="~j]6$0BIPg,,JNV0rbyn">
+                <field name="VAR">global night_rating</field>
+                <value name="VALUE">
+                  <block type="component_set_get" id="nSD0l7+(hhk6zs9)VH5;">
+                    <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="Label3"></mutation>
+                    <field name="COMPONENT_SELECTOR">Label3</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id=")(hqSN{?6WK^}VR6#Ux/">
+                    <mutation component_type="FirebaseDB" method_name="AppendValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                    <value name="ARG0">
+                      <block type="lexical_variable_get" id="|VNeUsFdvno0yYC;#o-:">
+                        <field name="VAR">global name</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="lexical_variable_get" id="S24DVMF_?l%y.z0d-=sY">
+                        <field name="VAR">global night_rating</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_method" id=")Y]Gzu;=/z]7QvT=U*O/">
+                        <mutation component_type="FirebaseDB" method_name="AppendValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                        <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                        <value name="ARG0">
+                          <block type="lexical_variable_get" id="GH{DiTUP5e/8A_Kpebw3">
+                            <field name="VAR">global name</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="lexical_variable_get" id="iIr8a9+ZI^3USKe+BB2w">
+                            <field name="VAR">global journal_entry</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="175" language-version="23"></yacodeblocks>
+</xml>

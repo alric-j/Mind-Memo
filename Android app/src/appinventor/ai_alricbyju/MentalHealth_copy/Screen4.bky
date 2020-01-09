@@ -1,0 +1,108 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="gad`P8$lm4]KMF`Ua2l_" x="-685" y="-447">
+    <field name="NAME">lst</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="`otT1O]5@cU|f$g2ih@G">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="RS.mF8J%Dc^lgR?i4F=I" x="-429" y="-361">
+    <mutation component_type="Button" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="controls_if" id="_!!0fol}/zhEM97=5Id6">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="Dz[U?87)[GNz#2ni.bFY">
+            <field name="OP">NEQ</field>
+            <value name="A">
+              <block type="component_set_get" id="KnV3!N5AK?/%OHTZ2oA+">
+                <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="component_set_get" id="Nc~Ns:*1~;@2cnn[Ns(@">
+                <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox2"></mutation>
+                <field name="COMPONENT_SELECTOR">PasswordTextBox2</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="Nd+bzrTv851G%5WR_X({">
+            <mutation component_type="Label" set_or_get="set" property_name="Visible" is_generic="false" instance_name="Label4"></mutation>
+            <field name="COMPONENT_SELECTOR">Label4</field>
+            <field name="PROP">Visible</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="9!=@;|^8!?JG,5T^|3]9">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="={,rfEL#.WBX+cP./|1^">
+            <mutation component_type="Label" set_or_get="set" property_name="Visible" is_generic="false" instance_name="Label4"></mutation>
+            <field name="COMPONENT_SELECTOR">Label4</field>
+            <field name="PROP">Visible</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="P!w?WXotY{.oTd|PSVYe">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+            <next>
+              <block type="lists_add_items" id="Ld5z~[tg[8=U^DQ/Hcup">
+                <mutation items="1"></mutation>
+                <value name="LIST">
+                  <block type="lexical_variable_get" id="AduBG`nmojAq%fUs_t1N">
+                    <field name="VAR">global lst</field>
+                  </block>
+                </value>
+                <value name="ITEM0">
+                  <block type="text_join" id="cyFys,M|amdCcoV?I}l_">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="pB{^K``O?F)9m{d]wuh@">
+                        <field name="TEXT">password </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="component_set_get" id="GDg4)S^pP*9_[D+KlIt;">
+                        <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                        <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                        <field name="PROP">Text</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="%H(5sZak%z.lUhrLSH(A">
+                    <mutation component_type="FirebaseDB" method_name="StoreValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                    <value name="ARG0">
+                      <block type="component_set_get" id="y0e7m;`B:k~)R#)s@[8y">
+                        <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                        <field name="COMPONENT_SELECTOR">TextBox1</field>
+                        <field name="PROP">Text</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="lexical_variable_get" id="~5Zw/@HN0dVK!4s_2P(e">
+                        <field name="VAR">global lst</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="175" language-version="23"></yacodeblocks>
+</xml>
